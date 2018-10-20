@@ -1,0 +1,7 @@
+{
+  "name": "hack_startup",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
