@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
 /**
  * Generated class for the EscolhaPage page.
  *
@@ -16,6 +17,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class EscolhaPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  }
+
+  openHome() {
+    this.navCtrl.setRoot('TabsPage', {}, {
+      animate: true,
+      direction: 'forward'
+    });
   }
 
   ionViewDidLoad() {
