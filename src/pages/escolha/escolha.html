@@ -7,17 +7,17 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-card (click) = "openHome()">
+<ion-content>
+   
+    <ion-card *ngFor="let turma of professores[0].turmas" (click)= "turmaclicada($event, turma)">
 
-    <ion-card-header>
-      9ºano E
-    </ion-card-header>
-  
-    <ion-card-content>
-      <!-- Add card content here! -->
-    </ion-card-content>
-  
-  </ion-card>
-</ion-content>
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="">
+          </ion-avatar>
+          <h2>{{turma.nome}}</h2>
+          <p></p>
+        </ion-item>
+      </ion-card>
+  </ion-content>
 

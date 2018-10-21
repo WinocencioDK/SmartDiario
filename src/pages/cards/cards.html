@@ -9,14 +9,14 @@
 
 <ion-content>
 
-  <ion-card *ngFor="let item of cardItems">
+  <ion-card *ngFor="let professor of professores">
 
     <ion-item>
       <ion-avatar item-start>
         <img [src]="item.user.avatar">
       </ion-avatar>
-      <h2>{{item.user.name}}</h2>
-      <p>{{item.date}}</p>
+      <h2>{{professor.nome}}</h2>
+      <p>{{professor.turmas.nome}}</p>
     </ion-item>
 
     <img [src]="item.image">

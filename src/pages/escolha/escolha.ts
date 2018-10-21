@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPageModule } from 'ionic-angular';
 
 /**
  * Generated class for the EscolhaPage page.
@@ -15,20 +15,64 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'escolha.html',
 })
 export class EscolhaPage {
+  professores: any[];
+  public teste: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+    this.professores = [
+      {
+        login: 'antonio',
+        senha: 'flavio',
+        nome: 'Antonio Flavio',
+        turmas : [
+            {
+                nome: '1A',
+                alunos: [
+                    {
+                        id: 1,
+                        nome: 'Felipe Batistela'
+                    },
+                    {
+                      id: 2,
+                      nome: 'WIllian Batistela'
+                     }
+                ],
+                diarios: [
+                    {
+                        data: '21/10/2018',
+                        conteudo: 'Sujeitos',
+                        observacao: 'Joaozinho atrapalhou a aula.',
+                        chamada: [
+                            {
+                                idAluno: 1,
+                                presente: false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+      }
+  ]
   }
 
-  openHome() {
+  openHome(id) {
     this.navCtrl.setRoot('TabsPage', {}, {
       animate: true,
       direction: 'forward'
     });
   }
 
+  turmaclicada($event, turma) {
+    console.log(turma);
+    this.navCtrl.push('PresencaPage', {turma: turma});
+    
+  }
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EscolhaPage');
+    var teste = this.navParams.get("account");
+    this.teste  = teste
+    console.log(teste);
   }
 
 }
