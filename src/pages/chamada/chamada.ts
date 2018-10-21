@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Chamada } from '..';
+import { EscolhaPage } from '../escolha/escolha';
 
 
 
@@ -16,18 +17,23 @@ export class ChamadaPage {
  //public minhavar;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    debugger;
     this.novaChamada = this.navParams.get("novaChamada");
     //this.minhavar = this.novaChamada.index;
   }
 
   ionViewDidLoad() {
+    debugger;
+  }
 
-    console.log('ionViewDidLoad ChamadaPage');
+  finalizar(){
+    this.navCtrl.push(EscolhaPage);
   }
 
   chamado($event, status) {
-    if (this.novaChamada.index < this.novaChamada.alunos.length - 1 ) {
-      debugger;
+    debugger;
+    if (this.novaChamada.index <= this.novaChamada.alunos.length - 1 ) {
+      
       
       this.aux = {
         index: this.novaChamada.index + 1,
@@ -37,11 +43,18 @@ export class ChamadaPage {
       };
       this.aux.alunos[this.novaChamada.index]['status'] = status;
       this.novaChamada = {...this.aux};
-      this.navCtrl.push(Chamada, {novaChamada : this.novaChamada});
-    } else {
-      alert('user: ' + this.novaChamada.alunos[0].status);
-      alert('user: ' + this.novaChamada.alunos[1].status);
-    }  
+      debugger;
+      if(this.novaChamada.index < this.novaChamada.alunos.length)
+      {
+        //verifica que o index é igual ao limite.
+        this.navCtrl.push(Chamada, {novaChamada : this.novaChamada});
+      }
+      else
+      {
+        this.navCtrl.push(EscolhaPage, {novaChamada : this.novaChamada});
+      }
+      
+    }
 
   }
 

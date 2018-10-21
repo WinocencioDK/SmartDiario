@@ -15,14 +15,18 @@
 
 
 <ion-content class="card-background-page">
-  <ion-card >
+  <ion-card *ngIf="novaChamada.index < novaChamada.alunos.length">
 
     <img src="../../assets/img/lego.jpeg">
+
     <div class="card-title">{{novaChamada.alunos[novaChamada.index].nome}}</div>
-    <h2>{{novaChamada.alunos.length}}</h2>
 
-
+    <button ion-button round color="danger" (click) = "chamado($event, false)" style="margin-right: 135px;">Faltou</button>
+    <button ion-button round color="secondary" (click) = "chamado($event, true)">Presente</button>
   </ion-card>
-  <button ion-button round color="danger" (click) = "chamado($event, false)" style="margin-right: 135px;">Faltou</button>
-  <button ion-button round color="secondary" (click) = "chamado($event, true)">Presente</button>
-
+  
+  
+  
+  <ion-card *ngIf="novaChamada.index >= novaChamada.alunos.length">
+  <button ion-button round color="danger" (click) = "finalizar()" style="margin-right: 135px;">Sair</button>
+</ion-card>
