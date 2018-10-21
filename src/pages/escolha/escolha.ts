@@ -16,7 +16,6 @@ import { IonicPageModule } from 'ionic-angular';
 })
 export class EscolhaPage {
   professores: any[];
-  public teste: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.professores = [
@@ -30,11 +29,13 @@ export class EscolhaPage {
                 alunos: [
                     {
                         id: 1,
-                        nome: 'Felipe Batistela'
+                        nome: 'Felipe Batistela',
+                        presente: false
                     },
                     {
                       id: 2,
-                      nome: 'WIllian Batistela'
+                      nome: 'WIllian Batistela',
+                      presente: false
                      }
                 ],
                 diarios: [
@@ -45,7 +46,7 @@ export class EscolhaPage {
                         chamada: [
                             {
                                 idAluno: 1,
-                                presente: false
+                                
                             }
                         ]
                     }
@@ -71,8 +72,6 @@ export class EscolhaPage {
 
   ionViewDidLoad() {
     var teste = this.navParams.get("account");
-    this.teste  = teste
-    console.log(teste);
   }
 
 }

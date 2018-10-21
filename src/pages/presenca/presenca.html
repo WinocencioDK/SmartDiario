@@ -15,8 +15,8 @@
 
 
 <ion-content padding>
-  <h2>{{turma.nome}} </h2> <button ion-button color="light" clear>Iniciar Chamada</button>
-    <ion-card *ngFor="let aluno of turma.alunos">
+  <h2>{{turma2.nome}} </h2> <button ion-button color="light" clear (click) = "chamadaOpen($event, turma2)">Iniciar Chamada</button>
+    <ion-card *ngFor="let aluno of turma2.alunos">
 
         <ion-item>
           <ion-avatar item-start>

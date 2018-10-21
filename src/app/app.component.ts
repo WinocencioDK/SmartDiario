@@ -42,7 +42,8 @@ export class MyApp {
     { title: 'Notas', component: 'NotasPage' },
     { title: 'Presenca', component: 'PresencaPage' },
     { title: 'Conteudo', component: 'ConteudoPage' },
-    { title: 'Escolha', component: 'EscolhaPage' }
+    { title: 'Escolha', component: 'EscolhaPage' },
+    {title: 'Chamada', component: 'ChamadaPage' }
   ]
 
   constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {

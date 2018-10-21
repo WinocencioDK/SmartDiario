@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+
+      <ion-buttons start>
+          <button ion-button icon-only>
+            <ion-icon name="contact"></ion-icon>
+          </button>
+        </ion-buttons>
+
+    <ion-title>Chamada</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page">
+  <ion-card >
+
+    <img src="../../assets/img/lego.jpeg">
+    <div class="card-title">{{novaChamada.alunos[novaChamada.index].nome}}</div>
+    <h2>{{novaChamada.alunos.length}}</h2>
+
+
+  </ion-card>
+  <button ion-button round color="danger" (click) = "chamado($event, false)" style="margin-right: 135px;">Faltou</button>
+  <button ion-button round color="secondary" (click) = "chamado($event, true)">Presente</button>
+
