@@ -1,18 +1,29 @@
-<!--
-  Generated template for the ValidacaoPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>validacao</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+  
+        <ion-buttons start>
+            <button ion-button icon-only>
+              <ion-icon name="contact"></ion-icon>
+            </button>
+          </ion-buttons>
+  
+      <ion-title>presenca</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+      <ion-card *ngFor="let aluno of novaChamada.alunos">
+  
+          <ion-item>
+            <h2>{{aluno.nome}}}</h2>
+            <h2>{{aluno.status}}</h2>
+            <p></p>
+          </ion-item>
 
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+         
+        </ion-card>
+        <button ion-button round color="danger" (click) = "finalizar()" style="margin-right: 135px;">Sair</button>
+  </ion-content>

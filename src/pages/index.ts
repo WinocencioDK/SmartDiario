@@ -12,3 +12,4 @@ export const Tab3Root = 'PresencaPage';
 export const Tab4Root = 'ConteudoPage'; 
 
 export const Chamada = 'ChamadaPage';
+export const Validacao = 'ValidacaoPage';
