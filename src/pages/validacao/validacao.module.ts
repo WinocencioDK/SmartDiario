@@ -10,4 +10,6 @@ import { ValidacaoPage } from './validacao';
     IonicPageModule.forChild(ValidacaoPage),
   ],
 })
-export class ValidacaoPageModule {}
+export class ValidacaoPageModule {
+  
+}

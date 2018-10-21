@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Chamada } from '..';
 import { EscolhaPage } from '../escolha/escolha';
+import { Validacao } from '..'
 
 
 
@@ -27,7 +28,7 @@ export class ChamadaPage {
   }
 
   finalizar(){
-    this.navCtrl.push(EscolhaPage);
+    this.navCtrl.push(Validacao, {novaChamada: this.novaChamada});
   }
 
   chamado($event, status) {
@@ -49,11 +50,6 @@ export class ChamadaPage {
         //verifica que o index é igual ao limite.
         this.navCtrl.push(Chamada, {novaChamada : this.novaChamada});
       }
-      else
-      {
-        this.navCtrl.push(EscolhaPage, {novaChamada : this.novaChamada});
-      }
-      
     }
 
   }

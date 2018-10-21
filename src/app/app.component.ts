@@ -43,7 +43,8 @@ export class MyApp {
     { title: 'Presenca', component: 'PresencaPage' },
     { title: 'Conteudo', component: 'ConteudoPage' },
     { title: 'Escolha', component: 'EscolhaPage' },
-    {title: 'Chamada', component: 'ChamadaPage' }
+    {title: 'Chamada', component: 'ChamadaPage' },
+    {title: 'Validacao', component: 'ValidacaoPage'}
   ]
 
   constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {

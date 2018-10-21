@@ -21,7 +21,12 @@
 
     <div class="card-title">{{novaChamada.alunos[novaChamada.index].nome}}</div>
 
-    <button ion-button round color="danger" (click) = "chamado($event, false)" style="margin-right: 135px;">Faltou</button>
-    <button ion-button round color="secondary" (click) = "chamado($event, true)">Presente</button>
+    <button ion-button round color="danger" (click) = "chamado($event, 'F')" style="margin-right: 135px;">Faltou</button>
+    <button ion-button round color="secondary" (click) = "chamado($event, 'P')">Presente</button>
   </ion-card>
+  
+  
+  
+  <ion-card *ngIf="novaChamada.index >= novaChamada.alunos.length">
+  <button ion-button round color="danger" (click) = "finalizar()" style="margin-right: 135px;">finalizar chamada</button>
 </ion-card>
