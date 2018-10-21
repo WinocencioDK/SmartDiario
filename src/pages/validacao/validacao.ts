@@ -16,7 +16,7 @@ import { EscolhaPage } from '../escolha/escolha';
 })
 export class ValidacaoPage {
 
-  public turma2;
+  public novaChamada;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     debugger;
