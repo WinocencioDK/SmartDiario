@@ -57,11 +57,6 @@ export class LoginPage {
       toast.present();
     });
   }
-  
-  passandoDados(account){
-    this.navCtrl.push(MainPage,{account: this.account.email});
-    console.log(account.email);
-  }
 
 
 }

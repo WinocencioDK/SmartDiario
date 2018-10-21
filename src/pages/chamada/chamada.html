@@ -17,12 +17,11 @@
 <ion-content class="card-background-page">
   <ion-card >
 
-    <img src="../../assets/img/lego.jpeg">
+    <img src="../../assets/img/mostrar" + {{novaChamada.index}} + ".jpeg">
     <div class="card-title">{{novaChamada.alunos[novaChamada.index].nome}}</div>
-    <h2>{{novaChamada.alunos.length}}</h2>
 
 
   </ion-card>
-  <button ion-button round color="danger" (click) = "chamado($event, false)" style="margin-right: 135px;">Faltou</button>
+  <button ion-button round color="danger" (click) = "chamado($event, false)" style="margin-right: 120px;"></button>Faltou</button>
   <button ion-button round color="secondary" (click) = "chamado($event, true)">Presente</button>
 

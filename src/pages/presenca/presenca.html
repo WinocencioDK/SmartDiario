@@ -8,23 +8,21 @@
           </button>
         </ion-buttons>
 
-    <ion-title>presenca</ion-title>
+    <ion-title>Presenças - {{turma2.nome}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <h2>{{turma2.nome}} </h2> <button ion-button color="light" clear (click) = "chamadaOpen($event, turma2)">Iniciar Chamada</button>
+<ion-content> 
+    <button style="margin: 0 auto;" ion-button (click) = "chamadaOpen($event, turma2)">Iniciar Chamada</button>
     <ion-card *ngFor="let aluno of turma2.alunos">
 
         <ion-item>
-          <ion-avatar item-start>
-            <img [src]="">
-          </ion-avatar>
           <h2>{{aluno.nome}}</h2>
           <p></p>
         </ion-item>
       </ion-card>
+
 
 </ion-content>

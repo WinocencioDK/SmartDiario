@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Escolha sua Turma</ion-title>
+    <ion-title>Aulas do Dia</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -11,10 +11,7 @@
    
     <ion-card *ngFor="let turma of professores[0].turmas" (click)= "turmaclicada($event, turma)">
 
-        <ion-item>
-          <ion-avatar item-start>
-            <img [src]="">
-          </ion-avatar>
+        <ion-item style="border-color:black">
           <h2>{{turma.nome}}</h2>
           <p></p>
         </ion-item>
