@@ -6,12 +6,15 @@ import { ProfProvider } from '../../providers/prof/prof';
 import { User } from '../../providers';
 import { MainPage } from '../';
 
+import { Api } from '../../providers/api/api'
+
 @IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
   providers: [
-    ProfProvider
+    ProfProvider,
+    Api
 ]
 })
 export class LoginPage {
@@ -23,7 +26,7 @@ export class LoginPage {
     password: ''
   };
 
-
+  public professores;
 
 
   // Our translated text strings
@@ -32,11 +35,46 @@ export class LoginPage {
   constructor(public navCtrl: NavController,
     public user: User,
     public toastCtrl: ToastController,
-    public translateService: TranslateService) {
+    public translateService: TranslateService,
+    public api: Api) {
 
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
     })
+
+    this.carregaProfessores();
+  }
+
+  autentica() {
+    this.professores.forEach(professor => {
+      if (professor.login == this.account.email &&
+         professor.senha == this.account.password) {
+           console.log(true);
+           this.navCtrl.push(MainPage,{account: professor})
+         } else {
+
+          let toast = this.toastCtrl.create({
+            message: 'Usuario ou senha inválida, digite novamente.',
+            duration: 3000,
+            position: 'top'
+          });
+          toast.present();
+
+         }
+    });
+  }
+
+  carregaProfessores() {
+    this.api.get('aulas')
+    .subscribe(
+      data => {
+        const response = (data as any);
+        // console.log(response.professores);
+        this.professores = response.professores;
+      }, error => {
+        console.log(error);
+      }
+      );
   }
 
   // Attempt to login in through our User service
