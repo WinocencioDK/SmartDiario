@@ -17,7 +17,7 @@
 <ion-content class="card-background-page">
   <ion-card *ngIf="novaChamada.index < novaChamada.alunos.length">
 
-    <img src="../../assets/img/lego.jpeg">
+    <img src="../../assets/img/{{novaChamada.index}}.jpg">
 
     <div class="card-title">{{novaChamada.alunos[novaChamada.index].nome}}</div>
 
@@ -27,6 +27,4 @@
   
   
   
-  <ion-card *ngIf="novaChamada.index >= novaChamada.alunos.length">
-  <button ion-button round color="danger" (click) = "finalizar()" style="margin-right: 135px;">finalizar chamada</button>
-</ion-card>
+  

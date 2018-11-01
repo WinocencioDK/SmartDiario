@@ -17,9 +17,12 @@ import { Chamada } from '..';
 export class PresencaPage {
   public turma2;
   public novaChamada;
+  public professor;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
     this.turma2 = this.navParams.get("turma");
+    this.professor = this.navParams.get("professor");
     
   }
 
@@ -35,7 +38,7 @@ export class PresencaPage {
       alunos: turma2.alunos,
     }
     
-    this.navCtrl.push(Chamada, {novaChamada : this.novaChamada});
+    this.navCtrl.push(Chamada, {professor: this.professor, novaChamada : this.novaChamada});
   }
 
 }

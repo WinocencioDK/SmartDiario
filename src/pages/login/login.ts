@@ -47,14 +47,17 @@ export class LoginPage {
 
   autentica() {
     this.professores.forEach(professor => {
+
       if (professor.login == this.account.email &&
          professor.senha == this.account.password) {
-           console.log(true);
-           this.navCtrl.push(MainPage,{account: professor})
+
+          //  console.log(true);
+           this.navCtrl.push(MainPage,{professor: professor});
+
          } else {
 
           let toast = this.toastCtrl.create({
-            message: 'Usuario ou senha inválida, digite novamente.',
+            message: 'Usuário ou senha inválida, digite novamente.',
             duration: 3000,
             position: 'top'
           });
@@ -65,7 +68,7 @@ export class LoginPage {
   }
 
   carregaProfessores() {
-    this.api.get('aulas')
+    this.api.get('')
     .subscribe(
       data => {
         const response = (data as any);

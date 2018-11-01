@@ -17,10 +17,12 @@ import { EscolhaPage } from '../escolha/escolha';
 export class ValidacaoPage {
 
   public novaChamada;
+  public professor;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    debugger;
+    // debugger;
     this.novaChamada = this.navParams.get("novaChamada");
+    this.professor = this.navParams.get('professor');
     //this.minhavar = this.novaChamada.index;
   }
 
@@ -29,7 +31,7 @@ export class ValidacaoPage {
   }
 
   finalizar() {
-    this.navCtrl.push(EscolhaPage);
+    this.navCtrl.push(EscolhaPage, {professor: this.professor});
   }
 
 }

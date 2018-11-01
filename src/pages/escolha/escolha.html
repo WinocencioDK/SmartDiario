@@ -9,7 +9,7 @@
 
 <ion-content>
    
-    <ion-card *ngFor="let turma of professores[0].turmas" (click)= "turmaclicada($event, turma)">
+    <ion-card *ngFor="let turma of professor.turmas" (click)= "turmaClicada($event, turma)">
 
         <ion-item style="border-color:black">
           <h2>{{turma.nome}}</h2>
