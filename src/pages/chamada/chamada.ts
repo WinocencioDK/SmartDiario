@@ -30,6 +30,18 @@ export class ChamadaPage {
     
   }
 
+  swipe(event) {
+    if(event.direction === 4) {
+
+      //Levar para a Direita
+      this.chamado(event, "Presente");
+    }
+    if(event.direction === 2) {
+      //Levar para a Esquerda
+      this.chamado(event, "Falta");
+    }
+  }
+
   finalizar(){
     this.navCtrl.push(Validacao, {professor: this.professor, novaChamada: this.novaChamada});
   }

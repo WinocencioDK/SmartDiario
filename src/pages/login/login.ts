@@ -46,6 +46,7 @@ export class LoginPage {
   }
 
   autentica() {
+    var aut = false;
     this.professores.forEach(professor => {
 
       if (professor.login == this.account.email &&
@@ -53,18 +54,18 @@ export class LoginPage {
 
           //  console.log(true);
            this.navCtrl.push(MainPage,{professor: professor});
+          aut = true;
+         } 
 
-         } else {
-
-          let toast = this.toastCtrl.create({
-            message: 'Usuário ou senha inválida, digite novamente.',
-            duration: 3000,
-            position: 'top'
-          });
-          toast.present();
-
-         }
     });
+    if(aut == false){
+    let toast = this.toastCtrl.create({
+      message: 'Usuário ou senha inválida, digite novamente.',
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
+  }
   }
 
   carregaProfessores() {

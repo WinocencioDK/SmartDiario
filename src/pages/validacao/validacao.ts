@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EscolhaPage } from '../escolha/escolha';
+import { Chamada } from '..';
 
 /**
  * Generated class for the ValidacaoPage page.
@@ -34,4 +35,14 @@ export class ValidacaoPage {
     this.navCtrl.push(EscolhaPage, {professor: this.professor});
   }
 
+  refazer(novaChamada) {
+    this.novaChamada = {
+      index: 0,
+      ///tamanho: turma2.alunos.lenght,
+      nome: novaChamada.nome,
+      alunos: novaChamada.alunos,
+    }
+
+    this.navCtrl.push(Chamada, {professor: this.professor, novaChamada: this.novaChamada});
+  }
 }
