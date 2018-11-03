@@ -6,7 +6,10 @@ import { Injectable } from '@angular/core';
  */
 @Injectable()
 export class Api {
-  url: string = 'https://nodejs-221117.appspot.com/';
+  LOCAL : string = 'http://localhost:8001/aulas';
+  API_URL : string = 'https://nodejs-221117.appspot.com/';
+  
+  url: string = this.API_URL;
 
   constructor(public http: HttpClient) {
   }

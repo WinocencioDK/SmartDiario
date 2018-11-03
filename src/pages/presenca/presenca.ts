@@ -38,7 +38,9 @@ export class PresencaPage {
       alunos: turma2.alunos,
     }
     
-    this.navCtrl.push(Chamada, {professor: this.professor, novaChamada : this.novaChamada});
+    this.navCtrl.push(Chamada, {professor: this.professor,
+      novaChamada : this.novaChamada,
+      turma: this.turma2});
   }
 
 }

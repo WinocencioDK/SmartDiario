@@ -42,7 +42,9 @@ export class LoginPage {
       this.loginErrorString = value;
     })
 
-    this.carregaProfessores();
+    if (this.professores == null) {
+      this.carregaProfessores();
+    }
   }
 
   autentica() {

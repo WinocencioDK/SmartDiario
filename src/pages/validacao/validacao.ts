@@ -19,11 +19,12 @@ export class ValidacaoPage {
 
   public novaChamada;
   public professor;
+  public turma;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // debugger;
     this.novaChamada = this.navParams.get("novaChamada");
     this.professor = this.navParams.get('professor');
+    this.turma = this.navParams.get('turma');
     //this.minhavar = this.novaChamada.index;
   }
 
@@ -32,6 +33,11 @@ export class ValidacaoPage {
   }
 
   finalizar() {
+    this.professor.turmas.forEach(t => {
+      if (t.nome == this.turma.nome) {
+        t.chamadaRealizada = true;
+      }
+    });
     this.navCtrl.push(EscolhaPage, {professor: this.professor});
   }
 
@@ -43,6 +49,11 @@ export class ValidacaoPage {
       alunos: novaChamada.alunos,
     }
 
-    this.navCtrl.push(Chamada, {professor: this.professor, novaChamada: this.novaChamada});
+    this.turma.chamadaRealizada = false;
+
+    this.navCtrl.push(Chamada, {professor: this.professor, 
+      novaChamada: this.novaChamada,
+      turma: this.turma
+    });
   }
 }

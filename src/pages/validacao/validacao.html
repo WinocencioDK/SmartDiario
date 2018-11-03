@@ -25,7 +25,7 @@
 
          
         </ion-card>
-        <button ion-button block color="secondary" (click) = "finalizar()" style="margin-right: 135px;">Finalizar Chamada</button>
+        <button *ngIf="turma.chamadaRealizada == false" ion-button block color="secondary" (click) = "finalizar()" style="margin-right: 135px;">Finalizar Chamada</button>
 
         <button ion-button block color="danger" (click) = "refazer(novaChamada)" style="margin-right: 135px;">Refazer Chamada</button>
   </ion-content>
