@@ -21,8 +21,10 @@ export class ValidacaoPage {
   public professor;
   public turma;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
-
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public menu: MenuController) {
+    
     this.menu.enable(false);
     this.novaChamada = this.navParams.get("novaChamada");
     this.professor = this.navParams.get('professor');

@@ -19,7 +19,9 @@ export class ChamadaPage {
  public turma;
  //public minhavar;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public menu: MenuController) {
 
     this.menu.enable(false);
     this.novaChamada = this.navParams.get("novaChamada");
@@ -77,6 +79,4 @@ export class ChamadaPage {
     }
 
   }
-
-
 }

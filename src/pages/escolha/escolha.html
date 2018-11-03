@@ -1,6 +1,11 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar hideBackButton>
+      <ion-buttons left>
+          <button ion-button (click)="logOut()">
+              <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
     <ion-title>Aulas do Dia</ion-title>
     <!--<ion-datetime displayFormat="DDDD - DD/MM" [(ngModel)]="myDate"></ion-datetime>-->
     

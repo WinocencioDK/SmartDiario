@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController, ToastController, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController, MenuController} from 'ionic-angular';
 import { ProfProvider } from '../../providers/prof/prof';
 
 import { User } from '../../providers';
@@ -38,7 +38,7 @@ export class LoginPage {
     public translateService: TranslateService,
     public api: Api,
     public menu: MenuController) {
-    
+
     this.menu.enable(false);
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
 import { Chamada } from '..';
 
 /**
@@ -19,8 +19,10 @@ export class PresencaPage {
   public novaChamada;
   public professor;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
-    
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+     public menu: MenuController) {
+
     this.menu.enable(false);
     this.turma2 = this.navParams.get("turma");
     this.professor = this.navParams.get("professor");
