@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, MenuController, Platform, AlertController } from 'ionic-angular';
 
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -14,9 +14,33 @@ import { IonicPage, NavController, MenuController } from 'ionic-angular';
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController, public menu: MenuController) { 
+  constructor(public navCtrl: NavController, 
+    public menu: MenuController, 
+    public platform: Platform, 
+    public alertCtrl: AlertController) { 
 
     this.menu.enable(false);
+    platform.registerBackButtonAction(() => {
+      let alert = this.alertCtrl.create({
+        title: 'Sair',
+        message: 'Deseja realmete sair? ',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            handler: () => {
+            }
+          },
+          {
+            text: 'Sair',
+            handler: () => {
+              platform.exitApp();
+            }
+          }
+        ]
+      });
+      alert.present();
+    })
   }
 
   login() {

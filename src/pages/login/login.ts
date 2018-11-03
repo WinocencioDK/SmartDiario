@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController, ToastController, MenuController} from 'ionic-angular';
+import { IonicPage, NavController, ToastController, MenuController, Platform} from 'ionic-angular';
 import { ProfProvider } from '../../providers/prof/prof';
 
 import { User } from '../../providers';
@@ -37,8 +37,12 @@ export class LoginPage {
     public toastCtrl: ToastController,
     public translateService: TranslateService,
     public api: Api,
-    public menu: MenuController) {
-
+    public menu: MenuController,
+    public platform: Platform) {
+    
+      platform.registerBackButtonAction(() => {
+        this.getwelcome();
+      })
     this.menu.enable(false);
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
