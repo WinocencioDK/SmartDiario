@@ -9,11 +9,13 @@
   
   <ion-content padding>
       <ion-card *ngFor="let aluno of novaChamada.alunos">
-  
+
           <ion-item>
+            <ion-avatar item-start>
+              <img src="../../assets/img/{{aluno.id}}.jpg">
+            </ion-avatar>
             <h2>{{aluno.nome}}</h2>
-            <h2>{{aluno.status}}</h2>
-            <p></p>
+            <p>{{aluno.status}}</p>
           </ion-item>
 
          

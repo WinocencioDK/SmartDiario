@@ -1,6 +1,11 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar hideBackButton>
+      <ion-buttons left>
+          <button ion-button (click)="getwelcome()">
+              <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
     <ion-title>Login</ion-title>
   </ion-navbar>
 

@@ -72,6 +72,10 @@ export class LoginPage {
   }
   }
 
+  getwelcome(){
+    this.navCtrl.push('WelcomePage');
+  }
+
   carregaProfessores() {
     this.api.get('')
     .subscribe(

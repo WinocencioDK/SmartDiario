@@ -3,7 +3,7 @@
   <ion-navbar hideBackButton>
       <ion-buttons left>
           <button ion-button (click)="logOut()">
-              <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+              <ion-icon class="customIcon" name="md-close-circle"></ion-icon>
           </button>
       </ion-buttons>
     <ion-title>Aulas do Dia</ion-title>
@@ -16,23 +16,41 @@
 
 <ion-content>
    
-  <h1>Chamadas a fazer</h1>
-    <ion-card *ngFor="let turma of professor.turmas" (click)= "turmaClicada($event, turma)">
+  <ion-card>
+      <ion-card-header>
+        Chamadas a fazer
+      </ion-card-header>
+    
+      <ion-list>
+        <div *ngFor="let turma of professor.turmas">
+            <div>
+              <button ion-item *ngIf="turma.chamadaRealizada == false" (click)= "turmaClicada($event, turma)" >
+                <ion-icon name="md-clipboard" item-start></ion-icon>
+                {{turma.nome}}
+              </button>
+            </div>
+          </div>
+    
+      </ion-list>
+    </ion-card>
 
-        <ion-item *ngIf="turma.chamadaRealizada == false" style="border-color:black">
-          <h2>{{turma.nome}}</h2>
-          <p></p>
-        </ion-item>
-      </ion-card>
+  <ion-card>
+      <ion-card-header>
+          Chamadas realizadas
+      </ion-card-header>
+    
+      <ion-list>
+        <div *ngFor="let turma of professor.turmas">
+            <div>
+              <button ion-item *ngIf="turma.chamadaRealizada == true" (click)= "turmaClicada($event, turma)">
+                <ion-icon name="md-checkmark" item-start></ion-icon>
+                {{turma.nome}}
+              </button>
+            </div>
+          </div>
+    
+      </ion-list>
+  </ion-card>
 
-
-  <h1>Chamadas feitas</h1>
-      <ion-card *ngFor="let turma of professor.turmas" (click)= "turmaClicada($event, turma)">
-
-        <ion-item *ngIf="turma.chamadaRealizada == true" style="border-color:black">
-          <h2>{{turma.nome}}</h2>
-          <p></p>
-        </ion-item>
-      </ion-card>
-  </ion-content>
+</ion-content>
 
