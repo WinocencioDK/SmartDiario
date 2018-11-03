@@ -15,7 +15,7 @@
 
 
 <ion-content class="card-background-page">
-  <ion-card *ngIf="novaChamada.index < novaChamada.alunos.length" (swipe)="swipe($event)">
+  <ion-card *ngIf="novaChamada.index < novaChamada.alunos.length" (ionChange)="transition($event)" (swipe)="swipe($event)">
 
     <img src="../../assets/img/{{novaChamada.index}}.jpg">
 
