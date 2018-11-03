@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { Validacao } from '..';
 
 
@@ -13,7 +13,9 @@ export class EscolhaPage {
 
   professor: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
+
+    this.menu.enable(false);
     this.professor = this.navParams.get("professor");
   }
 

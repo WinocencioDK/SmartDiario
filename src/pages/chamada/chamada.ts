@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { Chamada } from '..';
 import { EscolhaPage } from '../escolha/escolha';
 import { Validacao } from '..'
@@ -19,7 +19,9 @@ export class ChamadaPage {
  public turma;
  //public minhavar;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
+
+    this.menu.enable(false);
     this.novaChamada = this.navParams.get("novaChamada");
     this.professor = this.navParams.get("professor");
     this.turma = this.navParams.get('turma');
